@@ -47,10 +47,10 @@ def save_response_content(response, destination):
 # os.system('mv conceptNet concept_net')
 
 # Define the Google Drive link to your spider.zip dataset
-google_drive_link = "https://drive.google.com/drive/folders/1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y?q=parent:1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y"
+google_drive_link = "https://drive.google.com/uc?id=1Vmm9gTzxiwNz-bevZIAA8c96w-Sf6UAd"
 
 # Define the path where you want to save the spider.zip dataset
-download_path = "/kaggle/working/spider2.zip"
+download_path = "/kaggle/working/spider3.zip"
 
 if not os.path.exists(download_path):
     # Download the dataset from Google Drive
