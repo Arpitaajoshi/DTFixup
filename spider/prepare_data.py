@@ -9,19 +9,19 @@ import os
 import requests
 import gdown
 
-def download_file_from_google_drive(id, destination):
-    URL = "https://docs.google.com/uc?export=download"
+# def download_file_from_google_drive(id, destination):
+#     URL = "https://docs.google.com/uc?export=download"
 
-    session = requests.Session()
+#     session = requests.Session()
 
-    response = session.get(URL, params={'id': id}, stream=True)
-    token = get_confirm_token(response)
+#     response = session.get(URL, params={'id': id}, stream=True)
+#     token = get_confirm_token(response)
 
-    if token:
-        params = {'id': id, 'confirm': token}
-        response = session.get(URL, params=params, stream=True)
+#     if token:
+#         params = {'id': id, 'confirm': token}
+#         response = session.get(URL, params=params, stream=True)
 
-    save_response_content(response, destination)
+#     save_response_content(response, destination)
 
 def get_confirm_token(response):
     for key, value in response.cookies.items():
@@ -39,11 +39,11 @@ def save_response_content(response, destination):
                 f.write(chunk)
 
 
-#  The link is provided by the author of IRNet: https://github.com/microsoft/IRNet/issues/6
-download_file_from_google_drive('1LgyjtDmf3Xd1txwq8HwKD6d6VJj5pLmn', 'conceptNet.zip')
-os.system('unzip conceptNet.zip')
-os.system('rm conceptNet.zip')
-os.system('mv conceptNet concept_net')
+# #  The link is provided by the author of IRNet: https://github.com/microsoft/IRNet/issues/6
+# download_file_from_google_drive('1LgyjtDmf3Xd1txwq8HwKD6d6VJj5pLmn', 'conceptNet.zip')
+# os.system('unzip conceptNet.zip')
+# os.system('rm conceptNet.zip')
+# os.system('mv conceptNet concept_net')
 
 # Define the Google Drive link to your spider.zip dataset
 google_drive_link = "https://drive.google.com/drive/folders/1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y?q=parent:1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y"
