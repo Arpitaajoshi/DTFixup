@@ -9,7 +9,7 @@ import logging
 import traceback
 from copy import deepcopy
 
-from DT-Fixup/spider/semparser.common import registry
+from /DT-Fixup/spider/semparser.common import registry
 
 REGISTERED_NAME = "REGISTERED_NAME"
 REGISTERED_KIND = "REGISTERED_KIND"
