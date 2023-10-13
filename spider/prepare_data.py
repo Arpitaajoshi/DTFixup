@@ -50,7 +50,7 @@ def save_response_content(response, destination):
 google_drive_link = "https://drive.google.com/drive/folders/1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y?q=parent:1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y"
 
 # Define the path where you want to save the spider.zip dataset
-download_path = "/kaggle/working/spider.zip"
+download_path = "/kaggle/working"
 
 if not os.path.exists(download_path):
     # Download the dataset from Google Drive
