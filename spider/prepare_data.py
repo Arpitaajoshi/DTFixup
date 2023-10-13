@@ -49,7 +49,7 @@ os.system('mv conceptNet concept_net')
 input_dir = '/kaggle/input'
 
 # Path to the spider.zip file
-spider_zip_path = os.path.join(input_dir, 'spider.zip')
+spider_zip_path = os.path.join(input_dir, 'spider2.zip')
 
 # Directory where you want to extract the dataset
 spider_extract_dir = 'spider'
