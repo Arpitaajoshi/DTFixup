@@ -7,7 +7,6 @@
 
 import os
 import requests
-import zipfile  # Added for unzipping
 
 def download_file_from_google_drive(id, destination):
     URL = "https://docs.google.com/uc?export=download"
@@ -38,24 +37,23 @@ def save_response_content(response, destination):
             if chunk:  # filter out keep-alive new chunks
                 f.write(chunk)
 
+
 #  The link is provided by the author of IRNet: https://github.com/microsoft/IRNet/issues/6
 download_file_from_google_drive('1LgyjtDmf3Xd1txwq8HwKD6d6VJj5pLmn', 'conceptNet.zip')
 os.system('unzip conceptNet.zip')
 os.system('rm conceptNet.zip')
 os.system('mv conceptNet concept_net')
 
-# Updated code for "spider.zip"
-# Define the dataset path in the Input directory
-input_dir = '/kaggle/input'
+# Define the Google Drive link to your spider.zip dataset
+google_drive_link = "https://drive.google.com/drive/folders/1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y?q=parent:1FGUjfqfwdRRRLDD3YeEuGeiI6fEBRi_y"
 
-# Path to the spider.zip file
-spider_zip_path = os.path.join(input_dir, 'spider2.zip')
+# Define the path where you want to save the spider.zip dataset
+download_path = "/kaggle/working/spider.zip"
 
-# Directory where you want to extract the dataset
-spider_extract_dir = 'spider'
+if not os.path.exists(download_path):
+    # Download the dataset from Google Drive
+    gdown.download(google_drive_link, download_path, quiet=False)
 
-# Unzip the spider.zip file
-with zipfile.ZipFile(spider_zip_path, 'r') as zip_ref:
-    zip_ref.extractall(spider_extract_dir)
-
-# Now the "spider" directory contains the dataset
+# Extract the ZIP file
+with zipfile.ZipFile(download_path, 'r') as zip_ref:
+    zip_ref.extractall("/kaggle/working/")
