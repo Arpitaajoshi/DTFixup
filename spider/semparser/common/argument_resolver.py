@@ -9,7 +9,7 @@ import logging
 import traceback
 from copy import deepcopy
 
-from /kaggle/working/DT-Fixup/spider/semparser.common import registry
+from semparser.common import registry
 
 REGISTERED_NAME = "REGISTERED_NAME"
 REGISTERED_KIND = "REGISTERED_KIND"
