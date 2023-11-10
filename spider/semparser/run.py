@@ -5,7 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-from semparser.common import argument_resolver, log_wrapper, utils
+from common import argument_resolver, log_wrapper, utils
 import traceback
 import os
 import torch
